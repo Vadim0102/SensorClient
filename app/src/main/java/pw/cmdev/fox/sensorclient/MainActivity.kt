@@ -161,7 +161,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     }
 
     private fun disconnectWebSocket() {
-        ws?.close()
+        ws?.close(1000, "Client disconnect")
         sensorManager.unregisterListener(this)
         statusText.text = "Disconnected"
         addressInput.isEnabled = true
