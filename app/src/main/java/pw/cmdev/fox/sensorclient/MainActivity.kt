@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 .url(url)
                 .build()
 
-            ws?.close()
+            ws?.close(1000, "Reconnecting")
 
             ws = client.newWebSocket(request, object : WebSocketListener() {
 
